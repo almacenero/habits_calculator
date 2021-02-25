@@ -1,0 +1,22 @@
+{
+  "name": "habits_calculator",
+  "version": "1.0.0",
+  "description": "Habit calculator coding challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/almacenero/habits_calculator.git"
+  },
+  "author": "Yasser Quintana Cardenas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/almacenero/habits_calculator/issues"
+  },
+  "homepage": "https://github.com/almacenero/habits_calculator#readme",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
