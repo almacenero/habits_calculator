@@ -4,6 +4,10 @@
 
 ## For test code use jest
 
+### Commands:
+
+npm install
+
 
 
 
