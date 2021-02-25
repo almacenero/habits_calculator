@@ -1,7 +1,11 @@
 # Habits Calculator
 Calculator JavaScript test with p5.js
 
-## For emulate UI i use p5.js
+## For test implementation  use nodejs 
 
-## For test implementation i use nodejs with jest
+## For test code use jest
+
+## For emulate UI  use p5.js
+
+
 
