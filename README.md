@@ -1,6 +1,6 @@
 # Habits Calculator
 
-## For test implementation  use nodejs 
+## For test implementation  use nodejs v15.10.0
 
 ## For test code use jest
 
