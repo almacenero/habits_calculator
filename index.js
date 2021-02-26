@@ -23,45 +23,43 @@ const equalValue = () => {
   while (stringOperationsNumbers.length > 1) {
     operatorsMath.forEach((operatorMath) => {
       stringOperationsNumbers.forEach((element, index) => {
-        if (!Array.isArray(operatorMath)) {
-          if (operatorMath === element) {
-            console.log("el operador----", operatorMath);
-            if (operatorMath === "*") {
-              acumulator =
-                stringOperationsNumbers[index - 1] *
-                stringOperationsNumbers[index + 1];
+        if (operatorMath === element) {
+          console.log("el operador----", operatorMath);
+          if (operatorMath === "*") {
+            acumulator =
+              stringOperationsNumbers[index - 1] *
+              stringOperationsNumbers[index + 1];
 
-              stringOperationsNumbers[index - 1] = acumulator;
+            stringOperationsNumbers[index - 1] = acumulator;
 
-              stringOperationsNumbers.splice(index, 2);
-            }
-            if (operatorMath === "/") {
-              acumulator =
-                stringOperationsNumbers[index - 1] /
-                stringOperationsNumbers[index + 1];
+            stringOperationsNumbers.splice(index, 2);
+          }
+          if (operatorMath === "/") {
+            acumulator =
+              stringOperationsNumbers[index - 1] /
+              stringOperationsNumbers[index + 1];
 
-              stringOperationsNumbers[index - 1] = acumulator;
+            stringOperationsNumbers[index - 1] = acumulator;
 
-              stringOperationsNumbers.splice(index, 2);
-            }
-            if (operatorMath === "+") {
-              acumulator =
-                stringOperationsNumbers[index - 1] +
-                stringOperationsNumbers[index + 1];
+            stringOperationsNumbers.splice(index, 2);
+          }
+          if (operatorMath === "+") {
+            acumulator =
+              stringOperationsNumbers[index - 1] +
+              stringOperationsNumbers[index + 1];
 
-              stringOperationsNumbers[index - 1] = acumulator;
+            stringOperationsNumbers[index - 1] = acumulator;
 
-              stringOperationsNumbers.splice(index, 2);
-            }
-            if (operatorMath === "-") {
-              acumulator =
-                stringOperationsNumbers[index - 1] -
-                stringOperationsNumbers[index + 1];
+            stringOperationsNumbers.splice(index, 2);
+          }
+          if (operatorMath === "-") {
+            acumulator =
+              stringOperationsNumbers[index - 1] -
+              stringOperationsNumbers[index + 1];
 
-              stringOperationsNumbers[index - 1] = acumulator;
+            stringOperationsNumbers[index - 1] = acumulator;
 
-              stringOperationsNumbers.splice(index, 2);
-            }
+            stringOperationsNumbers.splice(index, 2);
           }
         }
       });
