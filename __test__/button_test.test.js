@@ -9,32 +9,61 @@ describe("Button should recive  values", () => {
 });
 
 describe("Button should math  operations", () => {
-  test("Should add 2 numbers", () => {
+  test("Should operate one digit numbers", () => {
     panelButton("C");
     expect(panelButton(4)).toEqual(4);
-    expect(panelButton(6)).toEqual(46);
+
+    panelButton("-");
+
+    expect(panelButton(7)).toEqual(7);
 
     panelButton("+");
 
-    expect(panelButton(10)).toEqual(10);
-    expect(panelButton(1)).toEqual(101);
+    expect(panelButton(8)).toEqual(8);
 
     panelButton("+");
 
-    expect(panelButton(3)).toEqual(3);
-    expect(panelButton(2)).toEqual(32);
-
-    panelButton("*");
-
-    expect(panelButton(3)).toEqual(3);
-    expect(panelButton(6)).toEqual(36);
+    expect(panelButton(9)).toEqual(9);
 
     panelButton("/");
 
     expect(panelButton(2)).toEqual(2);
 
-    panelButton("=");
+    panelButton("*");
+
+    expect(panelButton(3)).toEqual(3);
+
+    expect(panelButton("=")).toEqual(6.5);
 
     panelButton("C");
+  });
+
+  test("Should operate more thanone digit numbers", () => {
+    /* panelButton("C");
+    expect(panelButton(14)).toEqual(14);
+
+    panelButton("-");
+
+    expect(panelButton(7)).toEqual(7);
+
+    panelButton("+");
+
+    expect(panelButton(8)).toEqual(8);
+
+    panelButton("+");
+
+    expect(panelButton(39)).toEqual(39);
+
+    panelButton("/");
+
+    expect(panelButton(2)).toEqual(2);
+
+    panelButton("*");
+
+    expect(panelButton(34)).toEqual(34);
+
+    panelButton("=");
+
+    panelButton("C"); */
   });
 });

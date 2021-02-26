@@ -1,5 +1,7 @@
 let stringNumber = [];
 let stringOperationsNumbers = [];
+let operatorsMath = ["*", "/", "-", "+"]; //este operador lo voy a llenar en el orden que entro los operadores
+//let operatorsMath = ["-"];
 
 let actualNumber = 0;
 
@@ -16,7 +18,59 @@ const equalValue = () => {
 
   stringOperationsNumbers.push(actualNumber);
   actualNumber = 0;
-  console.log(stringOperationsNumbers);
+
+  let acumulator = 0;
+  while (stringOperationsNumbers.length > 1) {
+    operatorsMath.forEach((operatorMath) => {
+      stringOperationsNumbers.forEach((element, index) => {
+        if (!Array.isArray(operatorMath)) {
+          if (operatorMath === element) {
+            console.log("el operador----", operatorMath);
+            if (operatorMath === "*") {
+              acumulator =
+                stringOperationsNumbers[index - 1] *
+                stringOperationsNumbers[index + 1];
+
+              stringOperationsNumbers[index - 1] = acumulator;
+
+              stringOperationsNumbers.splice(index, 2);
+            }
+            if (operatorMath === "/") {
+              acumulator =
+                stringOperationsNumbers[index - 1] /
+                stringOperationsNumbers[index + 1];
+
+              stringOperationsNumbers[index - 1] = acumulator;
+
+              stringOperationsNumbers.splice(index, 2);
+            }
+            if (operatorMath === "+") {
+              acumulator =
+                stringOperationsNumbers[index - 1] +
+                stringOperationsNumbers[index + 1];
+
+              stringOperationsNumbers[index - 1] = acumulator;
+
+              stringOperationsNumbers.splice(index, 2);
+            }
+            if (operatorMath === "-") {
+              acumulator =
+                stringOperationsNumbers[index - 1] -
+                stringOperationsNumbers[index + 1];
+
+              stringOperationsNumbers[index - 1] = acumulator;
+
+              stringOperationsNumbers.splice(index, 2);
+            }
+          }
+        }
+      });
+
+      console.log("el arreglo", stringOperationsNumbers);
+    });
+  }
+  console.log("mi acumulator", acumulator);
+  return acumulator;
 };
 
 const manageOperator = (operator) => {
@@ -31,7 +85,7 @@ const panelButton = (value) => {
     clearCalculator();
   }
   if (value === "=") {
-    equalValue();
+    return equalValue();
   }
   if (value === "+") {
     manageOperator("+");
@@ -49,7 +103,7 @@ const panelButton = (value) => {
     stringNumber.push(value);
     actualNumber = Number(stringNumber.join(""));
 
-    console.log(actualNumber);
+    //console.log(actualNumber);
     return actualNumber;
   }
 };
