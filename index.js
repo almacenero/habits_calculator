@@ -6,6 +6,7 @@ let stringOperationsNumbers = [];
 let operatorsMath = ["*", "/"];
 //Number imput one o more digits
 let actualNumber = 0;
+
 //Clean de calculator input
 const clearCalculator = () => {
   stringNumber = [];
