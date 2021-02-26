@@ -1,7 +1,6 @@
 let stringNumber = [];
 let stringOperationsNumbers = [];
 let operatorsMath = ["*", "/", "-", "+"]; //este operador lo voy a llenar en el orden que entro los operadores
-//let operatorsMath = ["-"];
 
 let actualNumber = 0;
 
@@ -10,7 +9,6 @@ const clearCalculator = () => {
   stringOperationsNumbers = [];
   total = 0;
   actualNumber = 0;
-  console.log(stringOperationsNumbers);
 };
 
 const equalValue = () => {
@@ -91,8 +89,6 @@ const panelButton = (value) => {
   if (typeof value == "number") {
     stringNumber.push(value);
     actualNumber = Number(stringNumber.join(""));
-
-    //console.log(actualNumber);
     return actualNumber;
   }
 };
