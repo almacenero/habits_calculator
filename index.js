@@ -1,9 +1,9 @@
-//first input numbers
+//First input numbers
 let stringNumber = [];
-//concatenate numbers and operators
+//Concatenate numbers and operators
 let stringOperationsNumbers = [];
-//operators for Math Operations
-let operatorsMath = ["*", "/", "-", "+"];
+//Operators for Math Operations
+let operatorsMath = ["*", "/"];
 //Number imput one o more digits
 let actualNumber = 0;
 //Clean de calculator input
@@ -30,7 +30,6 @@ const equalValue = () => {
     operatorsMath.forEach((operatorMath) => {
       stringOperationsNumbers.forEach((element, index) => {
         if (operatorMath === element) {
-          console.log("el operador----", operatorMath);
           if (operatorMath === "*") {
             acumulator =
               stringOperationsNumbers[index - 1] *
@@ -69,19 +68,32 @@ const equalValue = () => {
           }
         }
       });
-
-      console.log("el arreglo", stringOperationsNumbers);
     });
   }
-  console.log("mi acumulator", acumulator);
   return acumulator;
+};
+const addRestOperatorsList = (operator) => {
+  operatorsMath.forEach((operatorMath) => {
+    if (
+      operatorMath.toString() !== operator.toString() &&
+      operator !== "*" &&
+      operator !== "/"
+    ) {
+      operatorsMath.push(operator);
+    }
+  });
 };
 //Save the operator input in the calc
 const manageOperator = (operator) => {
   stringNumber = [];
-  stringOperationsNumbers.push(actualNumber);
-  stringOperationsNumbers.push(operator);
-  actualNumber = 0;
+  if (stringOperationsNumbers.join("").length <= 20) {
+    stringOperationsNumbers.push(actualNumber);
+    stringOperationsNumbers.push(operator);
+    addRestOperatorsList(operator);
+    actualNumber = 0;
+  } else {
+    return null;
+  }
 };
 //Button input function
 const panelButton = (value) => {
@@ -97,7 +109,13 @@ const panelButton = (value) => {
   if (typeof value == "number") {
     stringNumber.push(value);
     actualNumber = Number(stringNumber.join(""));
-    return actualNumber;
+
+    if (actualNumber.toString().length <= 20) {
+      return actualNumber;
+    }
+    if (actualNumber.toString().length > 20) {
+      return null;
+    }
   }
 };
 
