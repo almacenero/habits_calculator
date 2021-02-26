@@ -85,17 +85,8 @@ const panelButton = (value) => {
   if (value === "=") {
     return equalValue();
   }
-  if (value === "+") {
-    manageOperator("+");
-  }
-  if (value === "-") {
-    manageOperator("-");
-  }
-  if (value === "*") {
-    manageOperator("*");
-  }
-  if (value === "/") {
-    manageOperator("/");
+  if (value === "+" || value === "-" || value === "*" || value === "/") {
+    manageOperator(value);
   }
   if (typeof value == "number") {
     stringNumber.push(value);
