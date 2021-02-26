@@ -27,7 +27,6 @@ const equalValue = () => {
    * (*, /, +, -)
    */
   while (stringOperationsNumbers.length > 1) {
-    console.log("mi operadres", operatorsMath);
     operatorsMath.forEach((operatorMath) => {
       stringOperationsNumbers.forEach((element, index) => {
         if (operatorMath === element) {
