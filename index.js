@@ -1,16 +1,19 @@
+//first input numbers
 let stringNumber = [];
+//concatenate numbers and operators
 let stringOperationsNumbers = [];
-let operatorsMath = ["*", "/", "-", "+"]; //este operador lo voy a llenar en el orden que entro los operadores
-
+//operators for Math Operations
+let operatorsMath = ["*", "/", "-", "+"];
+//Number imput one o more digits
 let actualNumber = 0;
-
+//Clean de calculator input
 const clearCalculator = () => {
   stringNumber = [];
   stringOperationsNumbers = [];
   total = 0;
   actualNumber = 0;
 };
-
+//Resolv the math operations
 const equalValue = () => {
   stringNumber = [];
 
@@ -18,6 +21,11 @@ const equalValue = () => {
   actualNumber = 0;
 
   let acumulator = 0;
+  /**
+   * The array of operators is traversed and in each iteration the arrangement that has the string of
+   * numbers and operators is traversed, to execute the mathematical action in the order of priority
+   * (*, /, +, -)
+   */
   while (stringOperationsNumbers.length > 1) {
     operatorsMath.forEach((operatorMath) => {
       stringOperationsNumbers.forEach((element, index) => {
@@ -68,14 +76,14 @@ const equalValue = () => {
   console.log("mi acumulator", acumulator);
   return acumulator;
 };
-
+//Save the operator input in the calc
 const manageOperator = (operator) => {
   stringNumber = [];
   stringOperationsNumbers.push(actualNumber);
   stringOperationsNumbers.push(operator);
   actualNumber = 0;
 };
-
+//Button input function
 const panelButton = (value) => {
   if (value === "C") {
     clearCalculator();

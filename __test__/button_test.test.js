@@ -1,5 +1,5 @@
 const panelButton = require("./../index");
-
+//Test input values by button fuction
 describe("Button should recive  values", () => {
   test("Button should concatenate input values", () => {
     expect(panelButton(5)).toEqual(5);
@@ -7,7 +7,7 @@ describe("Button should recive  values", () => {
     expect(panelButton(0)).toEqual(510);
   });
 });
-
+//Test operations with numbers
 describe("Button should math  operations", () => {
   test("Should operate one digit numbers", () => {
     panelButton("C");
